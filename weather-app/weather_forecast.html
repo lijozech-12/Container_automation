@@ -1,0 +1,401 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather Forecast</title>
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+    <body>
+    <table>
+        <thead>
+            <tr>
+                <th>Date/Time</th>
+                <th>Temperature (K)</th>
+                <th>Feels Like (K)</th>
+                <th>Description</th>
+                <th>Wind Speed (m/s)</th>
+                <th>Humidity (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+            <tr>
+                <td>2024-03-11 06:00:00</td>
+                <td>281.27</td>
+                <td>279.29</td>
+                <td>scattered clouds</td>
+                <td>3.18</td>
+                <td>84</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-11 09:00:00</td>
+                <td>283.05</td>
+                <td>280.73</td>
+                <td>broken clouds</td>
+                <td>4.7</td>
+                <td>71</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-11 12:00:00</td>
+                <td>285.21</td>
+                <td>283.96</td>
+                <td>overcast clouds</td>
+                <td>3.57</td>
+                <td>57</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-11 15:00:00</td>
+                <td>286.38</td>
+                <td>284.99</td>
+                <td>overcast clouds</td>
+                <td>1.59</td>
+                <td>47</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-11 18:00:00</td>
+                <td>284.1</td>
+                <td>282.77</td>
+                <td>overcast clouds</td>
+                <td>0.4</td>
+                <td>58</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-11 21:00:00</td>
+                <td>283.21</td>
+                <td>281.89</td>
+                <td>overcast clouds</td>
+                <td>1.39</td>
+                <td>62</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 00:00:00</td>
+                <td>282.48</td>
+                <td>281.43</td>
+                <td>overcast clouds</td>
+                <td>2.16</td>
+                <td>69</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 03:00:00</td>
+                <td>281.62</td>
+                <td>279.65</td>
+                <td>overcast clouds</td>
+                <td>3.29</td>
+                <td>74</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 06:00:00</td>
+                <td>281.03</td>
+                <td>279.37</td>
+                <td>overcast clouds</td>
+                <td>2.63</td>
+                <td>78</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 09:00:00</td>
+                <td>283.66</td>
+                <td>282.39</td>
+                <td>overcast clouds</td>
+                <td>3.9</td>
+                <td>62</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 12:00:00</td>
+                <td>285.17</td>
+                <td>283.81</td>
+                <td>overcast clouds</td>
+                <td>3.91</td>
+                <td>53</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 15:00:00</td>
+                <td>285.9</td>
+                <td>284.46</td>
+                <td>overcast clouds</td>
+                <td>2.66</td>
+                <td>47</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 18:00:00</td>
+                <td>283.67</td>
+                <td>282.37</td>
+                <td>overcast clouds</td>
+                <td>3.12</td>
+                <td>61</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-12 21:00:00</td>
+                <td>281.91</td>
+                <td>280.4</td>
+                <td>overcast clouds</td>
+                <td>2.65</td>
+                <td>71</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 00:00:00</td>
+                <td>279.69</td>
+                <td>277.87</td>
+                <td>overcast clouds</td>
+                <td>2.51</td>
+                <td>84</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 03:00:00</td>
+                <td>278.71</td>
+                <td>277.03</td>
+                <td>scattered clouds</td>
+                <td>2.14</td>
+                <td>87</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 06:00:00</td>
+                <td>278.35</td>
+                <td>277.43</td>
+                <td>scattered clouds</td>
+                <td>1.42</td>
+                <td>88</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 09:00:00</td>
+                <td>281.73</td>
+                <td>280.36</td>
+                <td>broken clouds</td>
+                <td>2.4</td>
+                <td>70</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 12:00:00</td>
+                <td>284.11</td>
+                <td>282.59</td>
+                <td>broken clouds</td>
+                <td>1.86</td>
+                <td>51</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 15:00:00</td>
+                <td>285.33</td>
+                <td>283.8</td>
+                <td>scattered clouds</td>
+                <td>2.68</td>
+                <td>46</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 18:00:00</td>
+                <td>283.36</td>
+                <td>281.92</td>
+                <td>broken clouds</td>
+                <td>1.9</td>
+                <td>57</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-13 21:00:00</td>
+                <td>282.14</td>
+                <td>281.11</td>
+                <td>overcast clouds</td>
+                <td>2.07</td>
+                <td>67</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 00:00:00</td>
+                <td>280.26</td>
+                <td>278.79</td>
+                <td>overcast clouds</td>
+                <td>2.21</td>
+                <td>72</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 03:00:00</td>
+                <td>279.05</td>
+                <td>277.39</td>
+                <td>scattered clouds</td>
+                <td>2.19</td>
+                <td>74</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 06:00:00</td>
+                <td>278.84</td>
+                <td>277.14</td>
+                <td>broken clouds</td>
+                <td>2.19</td>
+                <td>80</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 09:00:00</td>
+                <td>282.86</td>
+                <td>281.94</td>
+                <td>overcast clouds</td>
+                <td>2.08</td>
+                <td>64</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 12:00:00</td>
+                <td>283.69</td>
+                <td>282.44</td>
+                <td>overcast clouds</td>
+                <td>2.13</td>
+                <td>63</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 15:00:00</td>
+                <td>284.58</td>
+                <td>283.4</td>
+                <td>overcast clouds</td>
+                <td>1.71</td>
+                <td>62</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 18:00:00</td>
+                <td>282.04</td>
+                <td>281.55</td>
+                <td>overcast clouds</td>
+                <td>1.48</td>
+                <td>73</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-14 21:00:00</td>
+                <td>281.15</td>
+                <td>280.43</td>
+                <td>broken clouds</td>
+                <td>1.58</td>
+                <td>77</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 00:00:00</td>
+                <td>280.48</td>
+                <td>279.93</td>
+                <td>broken clouds</td>
+                <td>1.36</td>
+                <td>80</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 03:00:00</td>
+                <td>279.95</td>
+                <td>279.34</td>
+                <td>overcast clouds</td>
+                <td>1.35</td>
+                <td>83</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 06:00:00</td>
+                <td>280.03</td>
+                <td>279.12</td>
+                <td>overcast clouds</td>
+                <td>1.6</td>
+                <td>81</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 09:00:00</td>
+                <td>284.18</td>
+                <td>282.98</td>
+                <td>overcast clouds</td>
+                <td>2.15</td>
+                <td>63</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 12:00:00</td>
+                <td>288</td>
+                <td>286.85</td>
+                <td>overcast clouds</td>
+                <td>2.63</td>
+                <td>50</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 15:00:00</td>
+                <td>288.63</td>
+                <td>287.57</td>
+                <td>overcast clouds</td>
+                <td>2.78</td>
+                <td>51</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 18:00:00</td>
+                <td>285.29</td>
+                <td>284.36</td>
+                <td>overcast clouds</td>
+                <td>2.79</td>
+                <td>69</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-15 21:00:00</td>
+                <td>284.69</td>
+                <td>283.86</td>
+                <td>overcast clouds</td>
+                <td>3.31</td>
+                <td>75</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-16 00:00:00</td>
+                <td>284.11</td>
+                <td>283.48</td>
+                <td>overcast clouds</td>
+                <td>3.84</td>
+                <td>85</td>
+            </tr>
+        
+            <tr>
+                <td>2024-03-16 03:00:00</td>
+                <td>284.11</td>
+                <td>283.48</td>
+                <td>light rain</td>
+                <td>4.66</td>
+                <td>85</td>
+            </tr>
+        
+        </tbody>
+    </table>
+    </body>
+    </html>
+    
