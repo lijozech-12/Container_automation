@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm -v /usr/share/nginx/html/*
 
 # Copy your HTML file into the Nginx server's document root
-COPY ./weather-app/weather_forecast.html /usr/share/nginx/html/index.html
+COPY weather_forecast.html /usr/share/nginx/html/index.html
 
 # Expose port 80 to the outside world
 EXPOSE 80

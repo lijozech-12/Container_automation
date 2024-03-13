@@ -2,7 +2,8 @@ version: '1'
 
 services:
   web:
-    image: lijozech12/weather-app:v6
+    image: lijozech12/weather-app:latest
     ports:
       - "83:80"
     restart: always
+ 
