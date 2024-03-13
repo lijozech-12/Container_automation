@@ -13,7 +13,7 @@ jobs:
       matrix:
         docker-context:
           - '.'
-          - './subdir'
+          - './weather-app'
         include:
           - docker-context: '.'
             image-name: 'lijozech12/weather-app'
