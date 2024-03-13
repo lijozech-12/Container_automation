@@ -124,6 +124,11 @@ Visit the following link:
 
 [http://localhost:83/](http://localhost:83/)
 
+## Also deployed int github pages below is the link
+
+[GitHub Pages Site](https://lijozech-12.github.io/Container_automation/)
+
+
 ## Issues Faced During Development
 
 - AWS account setup: It took a lot of time to set up.
