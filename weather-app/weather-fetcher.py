@@ -4,7 +4,7 @@ import json
 from store_to_cloud import upload_file_to_s3
 
 bucket_name = 'lijos-test-bucket'
-html_file = 'weather_forecast.html'
+html_file = 'index.html'
 data_file = 'weather_data.json'
 
 def fetch_weather_data(api_key, city):
