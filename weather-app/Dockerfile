@@ -8,8 +8,6 @@ WORKDIR /app
 COPY requirements.txt .
 COPY weather-fetcher.py .
 COPY store_to_cloud.py .
-COPY weather-fetcher.py /app/weather-fetcher.py
-COPY store_to_cloud.py /app/store_to_cloud.py
 RUN pip install -r requirements.txt 
 RUN pip install boto3 python-dotenv
 
