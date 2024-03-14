@@ -2,9 +2,10 @@ import requests
 from datetime import datetime
 import json
 from store_to_cloud import upload_file_to_s3
+import os
 
 bucket_name = 'lijos-test-bucket'
-html_file = './docs/index.html'
+html_file = 'docs/index.html' 
 data_file = 'weather_data.json'
 
 def fetch_weather_data(api_key, city):
@@ -147,12 +148,13 @@ def save_json_to_file(json_content, file_name):
     f.close()
     
 # Main execution
-API_KEY = '223be43b6ca0eabe49ed574d26e42005'
-CITY = 'Prague,CZ'
+API_KEY = os.getenv("API_KEY")
+CITY = os.getenv("CITY")
 
 
 if __name__ == "__main__":
     weather_data = fetch_weather_data(API_KEY, CITY)
+    print(weather_data)
     save_json_to_file(weather_data, data_file)
     extracted_data = extract_relevant_data(weather_data)
     html_content = generate_html_table(extracted_data)

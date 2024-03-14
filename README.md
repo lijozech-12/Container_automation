@@ -129,9 +129,76 @@ Visit the following link:
 [GitHub Pages Site](https://lijozech-12.github.io/Container_automation/)
 
 
+
+# Weather App Deployment with Minikube
+
+This guide provides step-by-step instructions for deploying the `weather-app` on a local Kubernetes cluster using Minikube.
+
+## Prerequisites
+
+Before you begin, you'll need to install the following tools:
+
+- **kubectl**: The command-line tool for interacting with Kubernetes clusters. [Installation instructions](https://kubernetes.io/docs/tasks/tools/).
+- **A Hypervisor**: Such as VirtualBox, VMware, Hyper-V, or Docker. This is needed for Minikube to create VMs.
+- **Minikube**: Simplifies running Kubernetes locally. [Installation instructions](https://kubernetes.io/docs/tasks/tools/install-minikube/).
+
+## Step 1: Start Minikube
+
+Start a single-node Kubernetes cluster with Minikube:
+
+```bash
+minikube start
+```
+## Step 2: Enable Ingress Controller
+Enable the built-in NGINX Ingress controller in Minikube:
+
+```bash
+minikube addons enable ingress
+```
+## Step 3: Deploy Your Application
+
+Go inside k8's folder
+```bash
+cd container-orchestrator
+```
+Run the below commands
+
+```bash
+kubectl apply -f weather-app-deployment.yaml
+
+```
+
+## Step 4: Deploy the service
+
+```bash
+kubectl apply -f weather-app-service.yaml
+```
+
+## Step 5: Deploy an Ingress Resource
+
+```bash
+kubectl apply -f weather-app-ingress.yaml
+```
+
+## Step 5: Access Your Application
+Find the IP address of your Minikube VM:
+```bash
+minikube ip
+```
+## Step 6:Access the application via your web browser:
+
+[http://<-minikube-ip->/weather](http://<minikube-ip>/weather)
+```
+http://<minikube-ip>/weather
+```
+
+Replace *<-minikube-ip->* with the actual IP address.
+
+
 ## Issues Faced During Development
 
 - AWS account setup: It took a lot of time to set up.
 - Issues with starting AWS instance.
 
 Make sure to follow the instructions carefully for a seamless setup. If you encounter any issues, refer to the provided resources or seek assistance from the community.
+
