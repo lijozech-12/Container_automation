@@ -1,8 +1,38 @@
-# Container Automation
+# Terraform and GitHub Actions for S3, CI/CD, and Kubernetes Deployment
 
-## Create the S3 Bucket
+This repository provides comprehensive Terraform configuration files for provisioning and managing an S3 bucket. It also includes GitHub Actions to run a CI/CD pipeline that builds and pushes Docker images. These images are then used to start a Kubernetes deployment on a local machine using Rancher Desktop. Instructions for setting up the deployment with Minikube are also provided.
 
-This repository contains Terraform configuration files to provision and manage an S3 bucket.
+![Working](<Images/Container automation project.png>)
+
+## Key Features
+
+- **Terraform Configuration**: Automates the provisioning and management of an S3 bucket.
+- **CI/CD Pipeline**: Utilizes GitHub Actions to automate the build and push of Docker images.
+- **Docker compose Deployment**: Deployed using docker compose. It will be useful when we don't want to deploy without spining up a resource hungry kuberentes cluster.
+- **Kubernetes Deployment**: Deploys applications locally using Rancher Desktop, with alternative instructions for Minikube.
+
+## Instructions
+
+### Terraform Setup
+1. Ensure Terraform is installed on your local machine.
+2. Navigate to the `terraform` directory.
+3. Run `terraform init` to initialize the Terraform configuration.
+4. Execute `terraform apply` to provision the S3 bucket.
+
+### CI/CD Pipeline
+1. The repository contains a `.github/workflows` directory with GitHub Actions workflows.
+2. Workflows automate the building and pushing of Docker images to a container registry.
+3. Ensure your repository secrets include credentials for accessing the container registry.
+
+### Kubernetes Deployment
+- **Rancher Desktop**:
+  - Rancher Desktop is an open-source project that provides a simple way to run Kubernetes clusters on your local machine. It offers an easy-to-use interface and powerful features for managing Kubernetes workloads.
+
+
+- **Minikube**:
+  - Minikube is a tool that allows you to run a single-node Kubernetes cluster on your local machine. It's designed for users looking to develop and test Kubernetes applications locally.
+
+
 
 ### AWS Credentials Setup
 
@@ -114,11 +144,16 @@ Run the file:
 ./deploy.sh
 ```
 
+This script is only to build and deploy it manuvally. It will automatically deployed using github actions.
+
+![Github action](Images/Github_action.png)
+
 Now deploy it by running the following command:
 
 ```bash
 docker-compose -f weather-page-docker-compose.yml up
 ```
+
 
 Visit the following link:
 
@@ -129,6 +164,25 @@ Visit the following link:
 [GitHub Pages Site](https://lijozech-12.github.io/Container_automation/)
 
 
+# Weather App Deployment with Rancher Desktop
+
+After setting up rancher desktop run the below commands
+
+``` bash
+cd container-orchestrator 
+kubectl apply -f weather-app-deployment.yaml
+kubectl apply -f weather-app-service.yaml
+kubectl apply weather-app-ingress.yaml 
+```
+
+It will start running when you use `kubectl get all` to see all the resources.
+![Kubernetes Resources](Images/K8s-resources.png)
+
+##### Result
+
+when you visit http://localhost:30083/ you can see the website.
+
+![website](Images/website.png)
 
 # Weather App Deployment with Minikube
 
@@ -195,10 +249,4 @@ http://<minikube-ip>/weather
 Replace *<-minikube-ip->* with the actual IP address.
 
 
-## Issues Faced During Development
-
-- AWS account setup: It took a lot of time to set up.
-- Issues with starting AWS instance.
-
-Make sure to follow the instructions carefully for a seamless setup. If you encounter any issues, refer to the provided resources or seek assistance from the community.
 
