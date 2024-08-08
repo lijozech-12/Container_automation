@@ -130,6 +130,8 @@ Now that the S3 bucket is set up, we need to insert data into the bucket. To do 
 docker-compose -f weather-fetcher-docker-compose.yml up -d
 ```
 
+
+
 ## Starting Website Manually
 
 Change the permission of the file:
@@ -158,6 +160,8 @@ docker-compose -f weather-page-docker-compose.yml up
 Visit the following link:
 
 [http://localhost:83/](http://localhost:83/)
+
+![Weather page](<Images/website docker compose.png>)
 
 ## Also deployed int github pages below is the link
 
