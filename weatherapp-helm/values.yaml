@@ -1,0 +1,7 @@
+appName: weather-app
+namespace: default
+version: default
+
+image:
+  name: lijozech12/weather-app
+  tag: latest

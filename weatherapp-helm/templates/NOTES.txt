@@ -1,0 +1,4 @@
+This is {{ .Values.version }} version of application.
+Running on {{ .Values.namespace }} namespace
+
+The weather application is now showing at http://localhost:30083/

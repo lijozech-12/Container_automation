@@ -163,7 +163,7 @@ Visit the following link:
 
 ![Weather page](<Images/website docker compose.png>)
 
-## Also deployed int github pages below is the link
+## Also deployed in the github pages below is the link
 
 [GitHub Pages Site](https://lijozech-12.github.io/Container_automation/)
 
@@ -254,3 +254,6 @@ Replace *<-minikube-ip->* with the actual IP address.
 
 
 
+```
+helm install weather-app weatherapp-helm/
+```
