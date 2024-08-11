@@ -1,15 +1,19 @@
 # Terraform and GitHub Actions for S3, CI/CD, and Kubernetes Deployment
 
-This repository provides comprehensive Terraform configuration files for provisioning and managing an S3 bucket. It also includes GitHub Actions to run a CI/CD pipeline that builds and pushes Docker images. These images are then used to start a Kubernetes deployment on a local machine using Rancher Desktop. Instructions for setting up the deployment with Minikube are also provided.
+This repository provides comprehensive Terraform configuration files for provisioning and managing an S3 bucket. It also includes GitHub Actions to run a CI/CD pipeline that builds and pushes Docker images. These images are then used to start a Kubernetes deployment on a local machine using Rancher Desktop. Uses Argo CD to monitor changes in github repo then make that change in K8s cluster.
+I first developed this project for normal kubernetes deployment. Now It uses helm package manager to package the app. And deploy it into different usecases, like dev,prod etc..
 
-![Working](<Images/Container automation project.png>)
+ Instructions for setting up the deployment with Minikube are also provided. Plus files for starting a K8s cluster in digitalocean is also provided.
+
+
+![Working](Images/container-automation-chart.png)
 
 ## Key Features
 
 - **Terraform Configuration**: Automates the provisioning and management of an S3 bucket.
 - **CI/CD Pipeline**: Utilizes GitHub Actions to automate the build and push of Docker images.
 - **Docker compose Deployment**: Deployed using docker compose. It will be useful when we don't want to deploy without spining up a resource hungry kuberentes cluster.
-- **Kubernetes Deployment**: Deploys applications locally using Rancher Desktop, with alternative instructions for Minikube.
+- **Kubernetes Deployment**: Deploys applications locally using Rancher Desktop, with alternative instructions for Minikube. It uses argo cd for continuous deployments for the changes happend in github.
 
 ## Instructions
 
@@ -168,7 +172,7 @@ Visit the following link:
 [GitHub Pages Site](https://lijozech-12.github.io/Container_automation/)
 
 
-# Weather App Deployment with Rancher Desktop
+# Deployment with Rancher Desktop.
 
 After setting up rancher desktop run the below commands
 
@@ -181,6 +185,42 @@ kubectl apply weather-app-ingress.yaml
 
 It will start running when you use `kubectl get all` to see all the resources.
 ![Kubernetes Resources](Images/K8s-resources.png)
+
+
+
+# Using helm
+
+Helm package is stored inside a weatherapp-helm folder.
+You can start the cluster using following commands.
+
+``` bash
+# normal deployment
+helm install weather-app weatherapp-helm/ --values weatherapp-helm/values.yaml
+```
+![default-helm](Images/default-helm.png)
+
+``` bash
+# Dev deployment
+helm install weather-app-dev weatherapp-helm/ --values weatherapp-helm/values.yaml -f weatherapp-helm/values-dev.yaml -n dev
+```
+![dev-helm](Images/development-helm.png)
+
+``` bash
+# Production deployment
+helm install weather-app weatherapp-helm/ --values weatherapp-helm/values.yaml -f weatherapp-helm/values-prod.yaml -n prod
+```
+![production-helm](Images/production-helm.png)
+
+# Argo CD
+
+Follow [Installation](https://argo-cd.readthedocs.io/en/stable/getting_started/) documentation to install Argo CD in your cluster.
+
+Argo CD will help to continuously deploy changes pushed into github in the Kuberentes cluster.
+After installing it Specify the github repo and it's path(In our case weatherapp-helm). It will take the code from repo and deploy it in our cluster.
+
+![Argo Cd deployment](Images/argocd.png)
+
+
 
 ##### Result
 

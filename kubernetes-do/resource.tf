@@ -1,20 +1,19 @@
-resource "digitalocean_kubernetes_cluster" "foo" {
-  name   = "foo"
-  region = "nyc1"
-  # Grab the latest version slug from `doctl kubernetes options versions`
-  version = "1.30.2-do.0"
+resource "digitalocean_kubernetes_cluster" "dev-cluster" {
+  name   = var.cluster_name
+  region = var.region
+  version = var.k8s_version
 
   node_pool {
-    name       = "worker-pool"
-    size       = "s-1vcpu-2gb"
-    auto_scale = true
-    min_nodes  = 1
-    max_nodes  = 3
+    name       = var.node_pool_name
+    size       = var.node_size
+    auto_scale = var.auto_scale
+    min_nodes  = var.min_nodes
+    max_nodes  = var.max_nodes
 
     taint {
-      key    = "workloadKind"
-      value  = "database"
-      effect = "NoSchedule"
+      key    = var.taint_key
+      value  = var.taint_value
+      effect = var.taint_effect
     }
   }
 }
